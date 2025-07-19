@@ -1,0 +1,105 @@
+.projects-page {
+  padding: 2rem 2vw;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.projects-page h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #2ecc40;
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-unique-card {
+  background: #202020;
+  padding: 1.8rem 1.4rem;
+  border-radius: 18px;
+  box-shadow: 0 0 22px #2ecc4044, 0 0 5px #00000088;
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+    overflow-wrap: break-word;   /* Breaks long words to avoid overflow */
+  word-break: break-word;
+  hyphens: auto;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.project-unique-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px #2ecc4077;
+}
+
+.project-unique-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.project-unique-header h4 {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+.project-lang {
+  font-size: 0.65em;
+  padding: 0.2em 0.6em;
+  border-radius: 6px;
+  background-color: #2ecc40;
+  width:100px;
+  color: #18181c;
+  font-weight: 500;
+  text-align: center;
+  margin-left: auto;
+}
+
+.project-desc {
+  margin: 0.9em 0;
+  font-size: 0.96em;
+  color: #dddddd;
+  line-height: 1.4em;
+  flex-grow: 1;
+    white-space: normal;         /* Allows wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;   
+}
+
+.project-meta {
+  font-size: 0.85em;
+  opacity: 0.9;
+  color: #aaffaa;
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0.6em;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.4em;
+  flex-wrap: nowrap;           /* Prevents wrapping to a second line */
+  margin-top: auto;
+}
+
+.project-updated {
+  font-size: 0.75em;
+  color: #888;
+  margin-top: 0.7em;
+}
+.project-links button {
+  font-size: 0.8rem;
+  padding: 0.33em 0.6em;
+  border-radius: 6px;
+  min-width: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.project-links button:hover {
+  transform: scale(1.05);
+}

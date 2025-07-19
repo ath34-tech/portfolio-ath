@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+body {
+  background: #18181c;
+  color: #f0f0f0;
+  font-family: 'Inter', Arial, sans-serif; /* keep body sane for readability */
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, .funky-heading {
+  font-family: 'Fredoka', cursive;    /* or 'Bangers', 'Luckiest Guy' */
+  letter-spacing: 1px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: inherit;
+  text-decoration: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+main {
+  min-height: 75vh;
+  padding-bottom: 2em;
 }
-
-.App-link {
-  color: #61dafb;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  font-family: inherit;
+  color: #2ecc40;
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  main {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
   }
 }

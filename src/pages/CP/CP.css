@@ -1,0 +1,60 @@
+.cp-page {
+  padding: 2.8em 2vw;
+  max-width: 1200px;
+  margin: auto;
+  color: #f0f0f0;
+  font-family: "Inter", sans-serif;
+}
+
+.cp-page h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2ecc40;
+}
+
+.cp-ratings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cp-card {
+  background: #232421;
+  padding: 1.4rem 1.6rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px #2ecc4033;
+  min-width: 220px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.cp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px #2ecc4051;
+}
+.cp-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.cp-subtext {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-top: 0.2rem;
+}
+
+.cp-chart-container {
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px #2ecc4022;
+  margin-top: 2rem;
+}
+.cp-chart-container h3 {
+  text-align: center;
+  color: #2ecc40;
+  margin-bottom: 1rem;
+}

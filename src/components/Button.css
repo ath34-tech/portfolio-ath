@@ -1,0 +1,21 @@
+.pink-btn {
+  background: #2ecc40;
+  color: #fff;
+  border: none;
+  padding: 0.8em 1.7em;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.08em;
+  cursor: pointer;
+  box-shadow: 0 0 14px #2ecc4066;
+  transition: box-shadow 0.19s, transform 0.17s, background 0.21s;
+  letter-spacing: 0.7px;
+  margin-top: 0.7em;
+  margin-bottom: 0.4em;
+}
+.pink-btn:hover,
+.pink-btn:focus {
+  background: #ff1376;
+  box-shadow: 0 0 22px #2ecc4088;
+  transform: scale(1.045);
+}
