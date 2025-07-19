@@ -18,6 +18,10 @@
   justify-content: center;
 }
 
+#con{
+  background-color: #232421;
+}
+
 .blog-card {
   background: #232421;
   border-radius: 12px;
