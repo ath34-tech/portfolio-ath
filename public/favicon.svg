@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#E2DEDB"/>
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="none" stroke="#1D1D1B" stroke-width="2.5"/>
+  <circle cx="50" cy="14" r="4.5" fill="#C03F13"/>
+  <text x="32" y="42" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="28" fill="#1D1D1B" text-anchor="middle" letter-spacing="-1">AT</text>
+  <line x1="14" y1="48" x2="50" y2="48" stroke="#C03F13" stroke-width="3" stroke-linecap="round"/>
+</svg>

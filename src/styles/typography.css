@@ -1,0 +1,151 @@
+/* Broad-sheet Editorial Typography Rules */
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.font-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+/* Scaled Typography Tokens */
+.type-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(54px, 10.5vw, 150px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: block;
+}
+
+.type-display-banner {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 9vw, 130px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--paper);
+  display: block;
+}
+
+.type-heading-1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5.5vw, 68px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.type-heading-2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.type-section-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.type-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.type-body-lg {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.type-body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.type-caption {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.type-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.type-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-live {
+  background-color: var(--accent);
+  color: var(--paper);
+}
+
+.badge-building {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+.badge-archived {
+  background-color: transparent;
+  color: var(--muted);
+  border: 1px solid var(--muted);
+}
+
+.type-metric-num {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
