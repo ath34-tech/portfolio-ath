@@ -23,11 +23,7 @@ export default function HomePage({ navigateTo }) {
       {/* 🗞️ 01. TOP NEWSPAPER TEASER STRIP */}
       <section style={{ borderBottom: 'var(--border-ink)', backgroundColor: 'var(--paper)' }}>
         <div className="container" style={{ padding: 0 }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            width: '100%'
-          }}>
+          <div className="top-teaser-grid">
             {/* Teaser 1 */}
             <div className="broadsheet-column-rule" style={{ padding: 'var(--s3) var(--s4)', display: 'flex', gap: 'var(--s3)', alignItems: 'center' }}>
               <img src="/assets/pixie_preview.jpg" alt="Pixie" style={{ width: '48px', height: '48px', objectFit: 'cover', border: '1px solid var(--ink)' }} />
@@ -65,7 +61,7 @@ export default function HomePage({ navigateTo }) {
             </div>
 
             {/* Teaser 4: Issue Header Info */}
-            <div style={{ padding: 'var(--s3) var(--s4)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end', textAlign: 'right' }}>
+            <div style={{ padding: 'var(--s3) var(--s4)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
               <span className="type-meta" style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--ink)' }}>NO. 2026 // VOL. I</span>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)' }}>LUCKNOW, INDIA</span>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--accent)' }}>B.TECH CSE (AI)</span>
@@ -87,14 +83,15 @@ export default function HomePage({ navigateTo }) {
             className="animate-print-reveal"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(56px, 12vw, 165px)',
+              fontSize: 'clamp(36px, 11vw, 165px)',
               fontWeight: '900',
               lineHeight: '0.86',
               letterSpacing: '-0.025em',
               textAlign: 'center',
               margin: 'var(--s2) 0',
               color: 'var(--ink)',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              wordBreak: 'break-word'
             }}
           >
             ATH TRIPATHI
@@ -111,7 +108,7 @@ export default function HomePage({ navigateTo }) {
                 <span className="type-meta" style={{ color: 'var(--accent)', fontWeight: 'bold', letterSpacing: '0.1em', display: 'block', marginBottom: '4px' }}>
                   PRIMARY FOCUS // 2026
                 </span>
-                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 62px)', fontWeight: '900', lineHeight: '0.92', textTransform: 'uppercase' }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(32px, 5vw, 62px)', fontWeight: '900', lineHeight: '0.92', textTransform: 'uppercase' }}>
                   INTERACTIVE ENGINEER!
                 </h2>
               </div>
@@ -119,7 +116,7 @@ export default function HomePage({ navigateTo }) {
               {/* Stacked Massive Headline Block */}
               <div style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(24px, 3.6vw, 48px)',
+                fontSize: 'clamp(22px, 3.6vw, 48px)',
                 fontWeight: '900',
                 lineHeight: '0.96',
                 letterSpacing: '-0.015em',
@@ -191,7 +188,7 @@ export default function HomePage({ navigateTo }) {
             gap: 'var(--s3)',
             marginTop: 'var(--s6)'
           }}>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.8vw, 48px)', fontWeight: '900', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.8vw, 48px)', fontWeight: '900', letterSpacing: '-0.01em', textTransform: 'uppercase' }}>
               SYSTEMS NOT SLIDES
             </span>
             <span className="editorial-stamp" style={{ backgroundColor: 'var(--paper)', color: 'var(--accent)', border: '2px solid var(--paper)' }}>
@@ -239,31 +236,26 @@ export default function HomePage({ navigateTo }) {
         padding: 'var(--s4) 0'
       }} className="reveal-on-scroll">
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: 'var(--s3)',
-            textAlign: 'center'
-          }}>
+          <div className="broadsheet-stats-grid">
             <div className="broadsheet-column-rule" style={{ padding: '0 var(--s2)' }}>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)', display: 'block' }}>CP PROBLEMS</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>700+</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>700+</span>
             </div>
             <div className="broadsheet-column-rule" style={{ padding: '0 var(--s2)' }}>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)', display: 'block' }}>CODEFORCES</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--accent)' }}>1356 PUPIL</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--accent)' }}>1356 PUPIL</span>
             </div>
             <div className="broadsheet-column-rule" style={{ padding: '0 var(--s2)' }}>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)', display: 'block' }}>CODECHEF</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>1633 3★</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>1633 3★</span>
             </div>
             <div className="broadsheet-column-rule" style={{ padding: '0 var(--s2)' }}>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)', display: 'block' }}>LEETCODE</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>1500+</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--ink)' }}>1500+</span>
             </div>
             <div style={{ padding: '0 var(--s2)' }}>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)', display: 'block' }}>GITHUB REPOS</span>
-              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--accent)' }}>50+</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(22px, 3.5vw, 42px)', fontWeight: '900', color: 'var(--accent)' }}>50+</span>
             </div>
           </div>
         </div>
@@ -310,24 +302,16 @@ export default function HomePage({ navigateTo }) {
         overflow: 'hidden'
       }} className="reveal-on-scroll">
         <div className="container">
-          <div style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(54px, 11vw, 150px)',
-            fontWeight: '900',
-            lineHeight: '0.85',
-            letterSpacing: '-0.03em',
-            textTransform: 'uppercase',
-            color: 'var(--ink)'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s4)' }}>
+          <div className="staggered-display-title">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s4)', flexWrap: 'wrap' }}>
               <span>THE</span>
               <img src="/assets/pixie_preview.jpg" alt="Pixie" style={{ height: '0.7em', width: '1.4em', objectFit: 'cover', border: '2px solid var(--ink)' }} />
               <span>SYSTEMS</span>
             </div>
-            <div style={{ color: 'var(--accent)', textIndent: '0.5em' }}>
+            <div style={{ color: 'var(--accent)', textIndent: '0.2em' }}>
               PERFECT
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s4)', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--s4)', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
               <img src="/assets/trade_copilot_preview.jpg" alt="Trade Copilot" style={{ height: '0.7em', width: '1.4em', objectFit: 'cover', border: '2px solid var(--ink)' }} />
               <span>ENGINEER</span>
             </div>
@@ -355,7 +339,7 @@ export default function HomePage({ navigateTo }) {
         padding: 'var(--s7) 0'
       }} className="reveal-on-scroll">
         <div className="container">
-          <div className="grid-3col" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="reviews-grid-4col">
             {/* Review 1 */}
             <div className="broadsheet-column-rule" style={{ paddingRight: 'var(--s4)' }}>
               <p className="type-body" style={{ fontSize: '13px', fontStyle: 'italic', lineHeight: '1.45', marginBottom: 'var(--s3)' }}>
