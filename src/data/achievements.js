@@ -34,5 +34,5 @@ export const achievements = [
 export const secondaryAchievements = [
   "Hacktoberfest & Major League Hacking (MLH) Contributor",
   "Technical Assessment Reviewer for DSA & SQL at Vcriate",
-  "B.Tech CSE (AI Specialization) — IET Lucknow (CGPA: 8.07)"
+  "Pursuing B.Tech CSE (AI Specialization) (2024–2028) — IET Lucknow"
 ];

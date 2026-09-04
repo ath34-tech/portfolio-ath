@@ -24,15 +24,15 @@ export const experience = [
     ]
   },
   {
-    period: "2020 – 2024",
+    period: "2024 – 2028",
     role: "B.Tech in Computer Science & Engineering",
     company: "Institute of Engineering and Technology (IET), Lucknow",
     location: "Lucknow, India",
-    type: "SPECIALIZATION IN AI",
+    type: "AI SPECIALIZATION",
     highlights: [
-      "Graduated with CGPA 8.07 / 10.",
-      "Specialized in Artificial Intelligence, Machine Learning, Data Structures, Operating Systems, DBMS, and Computer Networks.",
-      "Built multiple open-source AI infrastructure projects and competitive programming tools."
+      "Pursuing B.Tech degree with specialization in Artificial Intelligence & Machine Learning (2024–2028).",
+      "Coursework focused on Artificial Intelligence, Machine Learning, Data Structures, Operating Systems, DBMS, and Computer Networks.",
+      "Building open-source AI infrastructure projects, agent runtimes, and competitive programming tools."
     ]
   }
 ];

@@ -69,7 +69,7 @@ export default function AboutPage({ navigateTo }) {
             </div>
             <div style={{ borderBottom: 'var(--border-muted)', paddingBottom: 'var(--s3)' }}>
               <span className="type-meta" style={{ color: 'var(--muted)', display: 'block', marginBottom: '4px' }}>EDUCATION</span>
-              <span className="type-body" style={{ fontWeight: '600', fontSize: '18px' }}>B.TECH CSE (AI SPECIALIZATION) — IET LUCKNOW (CGPA: 8.07)</span>
+              <span className="type-body" style={{ fontWeight: '600', fontSize: '18px' }}>B.TECH CSE (AI SPECIALIZATION) — IET LUCKNOW (2024–2028)</span>
             </div>
             <div>
               <span className="type-meta" style={{ color: 'var(--muted)', display: 'block', marginBottom: '4px' }}>ROLES</span>

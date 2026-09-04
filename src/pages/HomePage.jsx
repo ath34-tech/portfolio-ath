@@ -64,7 +64,7 @@ export default function HomePage({ navigateTo }) {
             <div style={{ padding: 'var(--s3) var(--s4)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
               <span className="type-meta" style={{ fontSize: '11px', fontWeight: 'bold', color: 'var(--ink)' }}>NO. 2026 // VOL. I</span>
               <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)' }}>LUCKNOW, INDIA</span>
-              <span className="type-meta" style={{ fontSize: '10px', color: 'var(--accent)' }}>B.TECH CSE (AI)</span>
+              <span className="type-meta" style={{ fontSize: '10px', color: 'var(--accent)' }}>B.TECH CSE (AI) · 2024–2028</span>
             </div>
           </div>
         </div>
@@ -364,7 +364,7 @@ export default function HomePage({ navigateTo }) {
                 "Strong foundation in Artificial Intelligence, algorithms, database systems, and OS CS core."
               </p>
               <span className="type-meta" style={{ fontSize: '10px', fontWeight: 'bold', display: 'block' }}>IET LUCKNOW</span>
-              <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)' }}>B.TECH CSE (AI) · CGPA 8.07</span>
+              <span className="type-meta" style={{ fontSize: '10px', color: 'var(--muted)' }}>B.TECH CSE (AI) · 2024–2028</span>
             </div>
 
             {/* Review 4 */}
