@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ath Tripathi — The Ath Times</title>
+  <meta name="description" content="Ath Tripathi: applied AI & LLM engineer building agentic products, real-time voice systems and the backend infrastructure that makes them work." />
+  <meta name="theme-color" content="#0d0607" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%237a1424'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-style='italic' font-size='38' fill='%23efe3d3'%3EAT%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ PRELOADER ============ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-kicker mono">Setting type · Inking rollers · Today's edition: Ath Tripathi</div>
+      <div class="loader-mast blackletter">The Ath Times</div>
+      <div class="loader-bar"><span></span></div>
+      <div class="loader-count mono"><span id="loadNum">0</span>% printed</div>
+    </div>
+  </div>
+
+  <!-- ============ 3D BACKGROUND ============ -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-label mono"></span></div>
+
+  <!-- ============ HUD (game layer) ============ -->
+  <aside class="hud mono" aria-label="Reading progress">
+    <div class="hud-row"><span>Edition</span><span id="hudPct">0%</span></div>
+    <div class="hud-bar"><span id="hudBar"></span></div>
+    <div class="hud-row"><span>Stories read</span><span><b id="hudRead">0</b>/<span id="hudTotal">7</span></span></div>
+    <div class="hud-row"><span>Badges</span><span id="hudBadges">0</span></div>
+  </aside>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <!-- ============ TOP NAV ============ -->
+  <nav class="topnav mono" id="topnav">
+    <a href="#front" class="nav-mast blackletter">Ath.</a>
+    <div class="nav-links">
+      <a href="#front">Front Page</a>
+      <a href="#builds">The Builds</a>
+      <a href="#pressroom">Press Room</a>
+      <a href="#city">Ride the City</a>
+      <a href="#careers">Notices</a>
+      <a href="#record">The Record</a>
+      <a href="#columns">Columns</a>
+      <a href="#puzzles">Puzzles</a>
+      <a href="#letters">Letters</a>
+    </div>
+  </nav>
+
+  <main id="paper">
+    <!-- ============ MASTHEAD / FRONT PAGE ============ -->
+    <header class="masthead" id="front" data-story="Front Page">
+      <div class="dateline mono">
+        <span>Vol. XXII · No. 1109</span>
+        <span id="today">Monday, 9 November 2026</span>
+        <span>Price: one good conversation</span>
+      </div>
+      <div class="mast-wrap">
+        <div class="ear ear-l">
+          <span class="mono">Weather</span>
+          <p>Heavy shipping, with scattered latency spikes by evening.</p>
+        </div>
+        <h1 class="mast blackletter" id="mast" data-cursor="spin">The Ath Times</h1>
+        <div class="ear ear-r">
+          <span class="mono">Editor-in-chief</span>
+          <p>Ath Tripathi. “All the systems fit to ship.”</p>
+        </div>
+      </div>
+      <div class="rule-double"></div>
+      <div class="subnav mono">
+        <span>Applied AI</span><span>LLM &amp; Agents</span><span>Inference</span><span>Backend</span><span>Voice AI</span><span>AI Product</span>
+      </div>
+
+      <section class="front-grid">
+        <article class="lead">
+          <div class="kicker mono">Special Report · Profile of an engineer</div>
+          <h2 class="headline split" id="headline"><span class="name-hl">Ath Tripathi</span> builds the systems <em>around</em> the models</h2>
+          <p class="deck">Routing gateways, real-time voice agents, a local desktop assistant and an inference lab. Ath works the whole path, from inference to interface.</p>
+          <div class="byline mono">By the Editorial Desk · Applied AI &amp; LLM Engineer · B.Tech CSE (AI)</div>
+          <div class="cols-2">
+            <p class="dropcap">A lot of AI demos never get past the notebook. <b class="name-inline">Ath Tripathi</b> keeps going until someone can actually use what he built. He builds LLM products end to end: the router that picks which model answers, the backend that streams the tokens, the voice pipeline that has to stop talking when a twelve-year-old interrupts it, and the interface on top.</p>
+            <p>His builds so far: <b>Pixie</b>, a desktop agent that launched on Product Hunt. <b>RouteLLMESH</b>, an OpenAI-compatible router. <b>Bodh AI</b>, a real-time voice interviewer. <b>KV Cache Lab</b>, a tool for seeing what inference really costs. He has also turned research papers like <b>ReTree</b> and <b>ATLAS</b> into running code.</p>
+            <p class="pull">“I'd rather show you what I built, where it was hard, and what changed than give you a list of buzzwords.”</p>
+            <p>Most of his interest sits in the unglamorous middle of the stack: prefill and decode, time-to-first-token, KV-cache memory, tool selection, conversation state. He learns by building, measures before he makes a claim, and writes it all up. That's 74 tutorials and 30K+ Medium views so far.</p>
+            <p><b>Now accepting offers</b> for Applied AI, LLM / Agent, AI Product and AI-infrastructure backend roles, especially at early-stage teams where one engineer owns a feature from start to finish.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn magnetic" href="#builds" data-cursor="read"><span>Read the build logs</span></a>
+            <a class="btn btn-ghost magnetic" href="#city" data-cursor="play"><span>Ride through the city</span></a>
+            <a class="btn btn-ghost magnetic" href="mailto:athtripathi@gmail.com" data-cursor="write"><span>Write to Ath</span></a>
+          </div>
+        </article>
+
+        <aside class="side">
+          <figure class="side-box inky-fig" data-cursor="play">
+            <div class="kicker mono">Front-page photograph</div>
+            <div class="inky-stage" id="inkyStage">
+              <canvas id="inkyCanvas" aria-label="Inky, a 3D robot paperboy mascot"></canvas>
+              <div class="bubble" id="bubble">Hi! I'm Inky. I deliver Ath's builds. Click me.</div>
+            </div>
+            <figcaption class="caption mono">Pictured: Inky, the Times' press bot, out on the morning round. He follows your cursor. Click him.</figcaption>
+          </figure>
+          <div class="side-box">
+            <div class="kicker mono">In this edition</div>
+            <ol class="index">
+              <li><a href="#builds"><span>The Builds</span><i>A2</i></a></li>
+              <li><a href="#pressroom"><span>Inside the Press Room</span><i>B1</i></a></li>
+              <li><a href="#city"><span>Ride Through Ath's City</span><i>C1</i></a></li>
+              <li><a href="#careers"><span>Career Notices</span><i>D4</i></a></li>
+              <li><a href="#record"><span>The Record</span><i>E1</i></a></li>
+              <li><a href="#columns"><span>Columns &amp; Op-Eds</span><i>F2</i></a></li>
+              <li><a href="#puzzles"><span>Puzzles &amp; Games</span><i>G7</i></a></li>
+              <li><a href="#letters"><span>Letters to the Editor</span><i>H1</i></a></li>
+            </ol>
+          </div>
+          <div class="side-box market">
+            <div class="kicker mono">Markets · Ratings</div>
+            <div class="mkt"><span>Codeforces</span><b>Specialist <i class="up">▲</i></b></div>
+            <div class="mkt"><span>CodeChef</span><b>3★ <i class="up">▲</i></b></div>
+            <div class="mkt"><span>DSA solved</span><b>600+ <i class="up">▲</i></b></div>
+            <div class="mkt"><span>Hack4Delhi</span><b>Top 10 <i class="up">▲</i></b></div>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <!-- ============ TICKER ============ -->
+    <div class="ticker mono" aria-label="Breaking news">
+      <div class="ticker-label">Breaking</div>
+      <div class="ticker-track">
+        <div class="ticker-move">
+          <span>Ath's RouteLLMESH ships <b>model:auto</b>: cost-aware routing behind one OpenAI-compatible API</span>
+          <span>Pixie climbs to roughly #50 on Product Hunt and stays there for about a week</span>
+          <span>Bodh AI teaches a voice agent to stop talking when interrupted</span>
+          <span>KV Cache Lab: Qwen3 8B costs 144 KiB of cache per token at fp16</span>
+          <span>Hack4Delhi: Ath's team makes the <b>Top 10 finalists</b></span>
+          <span>Ankuran hackathon: <b>Winner</b></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ THE BUILDS ============ -->
+    <section class="section fold" id="builds" data-story="The Builds">
+      <div class="section-head">
+        <span class="sec-no mono">Section A</span>
+        <h2 class="sec-title split">The Builds</h2>
+        <p class="sec-deck">Ath's systems, covered the way a newspaper covers a story. Open any card for the full build log: how he built it, the hard parts, and what changed.</p>
+      </div>
+
+      <!-- Pixie : lead story -->
+      <article class="story story-lead tilt" data-cursor="read" data-story="Pixie" data-project="pixie">
+        <div class="stamp">Launched</div>
+        <div class="story-media">
+          <div class="halftone h-pixie"><div class="win"><i></i><i></i><i></i><div class="win-body mono"><span>&gt; summarise ./notes</span><span class="typing">Pixie: reading 4 files…</span></div></div></div>
+          <div class="caption mono">Fig. 1: A desktop agent. Tauri shell, React front, Python brain.</div>
+        </div>
+        <div class="story-body">
+          <div class="kicker mono">A1 · Product · Desktop</div>
+          <h3>Pixie: an AI agent that lives on your own machine</h3>
+          <p class="deck">A local productivity agent that can use a model running on your laptop or a hosted one, through the same interface.</p>
+          <div class="cols-2 small">
+            <p>Pixie is a Tauri + React + Vite desktop app with a Python backend. Ollama provides local models, and Groq, GPT and Gemini sit behind the same provider layer, so changing the model doesn't mean rebuilding the app.</p>
+            <p>Tool use works in two steps. Pixie first picks a tool by reading the tool descriptions, then builds that tool's parameters. Conversation and memory controls stay with the user.</p>
+          </div>
+          <div class="hardpart"><span class="mono">The hard part</span>Making local models approachable. Installing Ollama and pulling a model is easy for a developer and a wall for everyone else, so onboarding turned into an engineering problem of its own.</div>
+          <ul class="tags mono"><li>Tauri</li><li>React</li><li>Vite</li><li>Python</li><li>Ollama</li><li>Groq</li><li>Gemini</li></ul>
+          <div class="links mono"><button class="read-more" type="button">Read how Ath built it →</button><a href="https://pixie-ath.netlify.app/" target="_blank" rel="noopener">Visit Pixie ↗</a><span>Product Hunt: ~#50 for about a week</span></div>
+        </div>
+      </article>
+
+      <div class="story-grid">
+        <!-- RouteLLMESH -->
+        <article class="story tilt" data-cursor="read" data-story="RouteLLMESH" data-project="routellmesh">
+          <div class="stamp stamp-blue">Open source</div>
+          <div class="kicker mono">A2 · Infrastructure</div>
+          <h3>RouteLLMESH: one endpoint, many models behind it</h3>
+          <p>A FastAPI gateway that speaks the OpenAI API. Send <code>model:auto</code> and it chooses a provider and model based on cost and task complexity.</p>
+          <div class="flow mono">
+            <span>client</span><b>→</b><span>/v1/chat</span><b>→</b><span class="hot">router</span><b>→</b><span>Groq · …</span>
+          </div>
+          <p class="small">PostgreSQL 17 and Redis hold the gateway's state. LangSmith traces each routing decision, so you can see why a request went where it did.</p>
+          <ul class="tags mono"><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>LangSmith</li></ul>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://github.com/ath34-tech/routeLLMESH" target="_blank" rel="noopener">Repo ↗</a><a href="https://hub.docker.com/r/ath49/routellmesh" target="_blank" rel="noopener">Docker Hub ↗</a></div>
+        </article>
+
+        <!-- Bodh -->
+        <article class="story tilt" data-cursor="read" data-story="Bodh AI" data-project="bodh">
+          <div class="stamp">Live demo</div>
+          <div class="kicker mono">A3 · Voice · Real-time</div>
+          <h3>Bodh AI: a voice interviewer that knows when to be quiet</h3>
+          <p>Spoken interviews in Hindi and Hinglish for Grade 7–8 students. Students join with a school code and student ID, so there's no login to remember.</p>
+          <div class="flow mono wave-flow">
+            <span>mic · 48 kHz</span><b>→</b><span>LiveKit</span><b>→</b><span>Deepgram</span><b>→</b><span class="hot">LLM</span><b>→</b><span>TTS</span>
+          </div>
+          <p class="small">The interview state tracks <i>confidence</i>, <i>evidence</i> and <i>completed</i>, and follow-up questions are chosen from it. The hard bugs: barge-in, awkward pauses, repeated questions, and hanging up too early on “bye.” The design target is a sub-second turn. It's a goal, not a measured benchmark.</p>
+          <ul class="tags mono"><li>LiveKit</li><li>FastAPI</li><li>Deepgram</li><li>Gemini 3.1 Flash-Lite</li><li>Groq</li></ul>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://bodh-voice.netlify.app/" target="_blank" rel="noopener">Try Bodh ↗</a></div>
+        </article>
+
+        <!-- KV Cache Lab -->
+        <article class="story story-wide tilt" data-cursor="read" data-story="KV Cache Lab" data-project="kvcache">
+          <div class="stamp stamp-gold">In progress</div>
+          <div class="kicker mono">A4 · Inference · Learning tool</div>
+          <h3>KV Cache Lab: what does a long conversation actually cost?</h3>
+          <p>A local FastAPI + Ollama + React app with SSE chat and a live metrics dashboard. It shows how KV-cache memory grows with context length. Try it below with Qwen3 8B's real config.</p>
+          <div class="kvcalc" id="kvcalc">
+            <div class="kv-formula mono">2 × <b>36</b> layers × <b>8</b> kv-heads × <b>128</b> dim × <b id="kvBytesL">2</b> B × <b id="kvTokL">8,192</b> tokens</div>
+            <label class="mono">Context length <input type="range" id="kvTok" min="512" max="40960" step="512" value="8192" /></label>
+            <div class="kv-prec mono" role="radiogroup" aria-label="Precision">
+              <button data-b="2" class="on" type="button">fp16</button><button data-b="1" type="button">int8</button><button data-b="0.5" type="button">int4</button>
+            </div>
+            <div class="kv-out"><span class="kv-num" id="kvOut">1.13</span><span class="mono" id="kvUnit">GiB</span><span class="mono kv-per" id="kvPer">144 KiB / token</span></div>
+            <div class="kv-meter"><span id="kvMeter"></span></div>
+          </div>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button></div>
+        </article>
+
+        <!-- ReTree -->
+        <article class="story tilt" data-cursor="read" data-story="ReTree" data-project="retree">
+          <div class="stamp stamp-blue">Paper → code</div>
+          <div class="kicker mono">A5 · Research · Agent memory</div>
+          <h3>ReTree: reading a memory paper, then making it run</h3>
+          <p>An implementation of ReTree memory concepts for agents: how an agent organises and retrieves its own past experience, and how that changes what it does next.</p>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://github.com/ath34-tech/Retree-Memory-Implementation" target="_blank" rel="noopener">Repo ↗</a><a href="https://arxiv.org/abs/2608.10676" target="_blank" rel="noopener">arXiv ↗</a></div>
+        </article>
+
+        <!-- ATLAS -->
+        <article class="story tilt" data-cursor="read" data-story="ATLAS" data-project="atlas">
+          <div class="stamp stamp-blue">Open source</div>
+          <div class="kicker mono">A6 · Research · Evaluation</div>
+          <h3>ATLAS: testing agents with time in the loop</h3>
+          <p>An implementation of the ATLAS time-testing idea for agent evaluation, built on Gemini 3.1 Flash-Lite. It's a research-to-code exercise in how you measure an agent and not only how you build one.</p>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://github.com/ath34-tech/ATLAS-time-testing" target="_blank" rel="noopener">Repo ↗</a></div>
+        </article>
+
+        <!-- Dexa -->
+        <article class="story story-wide story-brief tilt" data-cursor="read" data-project="dexa">
+          <div class="stamp stamp-gold">Prototype</div>
+          <div class="kicker mono">A7 · In brief · Developer tooling</div>
+          <h3>Dexa: a terminal-first ML copilot</h3>
+          <p>A concept for an ML copilot that lives in the terminal, where ML work actually happens. It explores sandboxed code execution and dataset versioning. Still on the drawing board, and labelled as such.</p>
+          <div class="links mono"><button class="read-more" type="button">Read the concept →</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FLY-THROUGH ============ -->
+    <section class="flythrough" id="flythrough" aria-hidden="true">
+      <div class="fly-sticky">
+        <div class="fly-text blackletter" id="flyText">Stop the Press</div>
+        <div class="fly-sub mono" id="flySub">Inside Ath's press room ↓</div>
+      </div>
+    </section>
+
+    <!-- ============ PRESS ROOM (horizontal) ============ -->
+    <section class="pressroom" id="pressroom" data-story="Press Room">
+      <div class="pr-sticky">
+        <div class="pr-head">
+          <span class="sec-no mono">Section B</span>
+          <h2 class="sec-title">Inside the Press Room</h2>
+          <p class="sec-deck">The type cases Ath sets from, ordered by depth, not alphabetically.</p>
+        </div>
+        <div class="pr-track" id="prTrack">
+          <div class="plate"><span class="plate-no mono">01</span><h4>AI &amp; LLM engineering</h4><p>Agentic systems, tool calling, structured outputs, orchestration, model routing and provider abstraction, LoRA/QLoRA fine-tuning.</p><div class="plate-meter"><i style="--v:.95"></i></div></div>
+          <div class="plate"><span class="plate-no mono">02</span><h4>Inference</h4><p>Prefill vs. decode, TTFT, TPOT, batching, KV cache, GQA/MLA, quantization. Treated as engineering constraints, not trivia.</p><div class="plate-meter"><i style="--v:.85"></i></div></div>
+          <div class="plate"><span class="plate-no mono">03</span><h4>Backend &amp; systems</h4><p>FastAPI, Django, REST and OpenAI-compatible APIs, PostgreSQL, Redis, Docker, streaming and real-time communication.</p><div class="plate-meter"><i style="--v:.9"></i></div></div>
+          <div class="plate"><span class="plate-no mono">04</span><h4>Voice AI</h4><p>STT → LLM → TTS pipelines, LiveKit rooms, barge-in handling, conversation state, latency debugging.</p><div class="plate-meter"><i style="--v:.8"></i></div></div>
+          <div class="plate"><span class="plate-no mono">05</span><h4>Product &amp; frontend</h4><p>React, Vite, Tauri, Expo / React Native, vanilla CSS. Enough to ship the interface people actually touch.</p><div class="plate-meter"><i style="--v:.75"></i></div></div>
+          <div class="plate"><span class="plate-no mono">06</span><h4>Languages</h4><p>Python for most things. C++ for contests and close-to-the-metal thinking. JavaScript / TypeScript for the front of the house.</p><div class="plate-meter"><i style="--v:.9"></i></div></div>
+          <div class="plate plate-learning"><span class="plate-no mono">07</span><h4>Currently reading</h4><p>vLLM and model serving, OpenTelemetry for AI apps, Kubernetes, Go, database internals (B-trees, MVCC, WAL). <b>Learning, not claiming.</b></p><div class="plate-meter"><i style="--v:.4"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RIDE THE CITY (3D game) ============ -->
+    <section class="section fold city-sec" id="city" data-story="The City">
+      <div class="section-head">
+        <span class="sec-no mono">Section C · Interactive</span>
+        <h2 class="sec-title split">Ride Through Ath's City</h2>
+        <p class="sec-deck">Every building is one of Ath's builds, roles or wins, and the bigger the story, the bigger the building. Ride up to a glowing doorstep and press Enter to walk inside.</p>
+      </div>
+      <div class="city-stage" id="cityStage" tabindex="-1">
+        <canvas id="cityCanvas"></canvas>
+        <canvas id="cityMap" width="150" height="150" aria-hidden="true"></canvas>
+        <div class="city-hud mono"><span>Visited <b id="cityVisited">0</b>/<b id="cityTotal">15</b></span><span>Speed <b id="citySpeed">0</b> km/h</span><span class="legend"><i class="lg-p"></i>Project <i class="lg-j"></i>Role <i class="lg-a"></i>Award</span></div>
+        <div class="city-plaque" id="cityPlaque" hidden>
+          <div class="kicker mono" id="plqKicker">Project</div>
+          <h4 id="plqTitle">Pixie</h4>
+          <p id="plqText"></p>
+          <button class="btn" id="plqBtn" type="button"><span>Enter the building ⏎</span></button>
+        </div>
+        <div class="city-fade" id="cityFade" aria-hidden="true"></div>
+        <div class="bld-room" id="bldRoom" hidden>
+          <div class="room-3d" aria-hidden="true">
+            <div class="rw rw-ceil"></div><div class="rw rw-left"></div><div class="rw rw-right"></div><div class="rw rw-floor"></div><div class="rw rw-back"></div>
+            <div class="room-lamp l1"></div><div class="room-lamp l2"></div>
+          </div>
+          <article class="poster" id="poster" tabindex="-1" data-lenis-prevent></article>
+          <div class="room-bar mono"><span id="roomName">Inside</span><button id="roomExit" type="button">Esc · Step outside</button></div>
+        </div>
+        <div class="city-overlay" id="cityOverlay">
+          <div class="blackletter co-title">Ride the City</div>
+          <p class="mono co-sub" id="cityMsg"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys to ride · <kbd>Space</kbd> to brake · <kbd>Enter</kbd> on a glowing doorstep to go inside · <kbd>Esc</kbd> to step out or park.<br />On a phone, use the on-screen pedals and tap “Enter”.</p>
+          <button class="btn magnetic" id="cityStart" type="button"><span>Hop on the bike</span></button>
+        </div>
+        <div class="city-touch" aria-hidden="true">
+          <button data-k="left" type="button">◀</button><button data-k="up" type="button">▲</button><button data-k="down" type="button">▼</button><button data-k="right" type="button">▶</button>
+        </div>
+        <button class="city-exit mono" id="cityExit" type="button">Esc · Park the bike</button>
+      </div>
+    </section>
+
+    <!-- ============ CAREER NOTICES ============ -->
+    <section class="section fold" id="careers" data-story="Career Notices">
+      <div class="section-head">
+        <span class="sec-no mono">Section D</span>
+        <h2 class="sec-title split">Career Notices</h2>
+        <p class="sec-deck">Positions Ath has held, as printed in the classifieds.</p>
+      </div>
+      <div class="classifieds">
+        <div class="ad tilt" data-cursor="read">
+          <div class="ad-top mono"><span>Machine Learning</span><span>Intern</span></div>
+          <h4>Paath.Live</h4>
+          <p>Fine-tuned models with LoRA and QLoRA. Hands-on work with adapters, training runs, and the gap between a loss curve and a model that's actually useful.</p>
+        </div>
+        <div class="ad tilt" data-cursor="read">
+          <div class="ad-top mono"><span>Full-Stack</span><span>Dec 2024 – Jun 2025</span></div>
+          <h4>Manifold Ventures</h4>
+          <p>Full-stack product work and integrations across the frontend/backend boundary, including the Meavana Chrome extension.</p>
+        </div>
+        <div class="ad tilt" data-cursor="read">
+          <div class="ad-top mono"><span>Problem Setter → Reviewer</span><span>2025</span></div>
+          <h4>Vcriate</h4>
+          <p>Problem-setter intern (May–Aug 2025): wrote 35+ problems. Then technical assessment reviewer on contract: 130+ DSA and SQL assessments reviewed and reported.</p>
+        </div>
+        <div class="ad ad-edu tilt" data-cursor="read">
+          <div class="ad-top mono"><span>Education</span><span>2024 – 2028</span></div>
+          <h4>IET Lucknow</h4>
+          <p>B.Tech, Computer Science &amp; Engineering (AI specialization). CGPA 8.07 / 10.</p>
+        </div>
+        <div class="ad ad-wanted tilt" data-cursor="write">
+          <div class="ad-top mono"><span>Wanted</span><span>Now</span></div>
+          <h4>Your team?</h4>
+          <p>Ath is looking for Applied AI · LLM / Agent · AI Product · AI-infra backend roles. Strongest fit: AI-first and YC-style early-stage teams.</p>
+          <a class="mono" href="#letters">Reply to this notice →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE RECORD ============ -->
+    <section class="section fold" id="record" data-story="The Record">
+      <div class="section-head">
+        <span class="sec-no mono">Section E</span>
+        <h2 class="sec-title split">The Record</h2>
+        <p class="sec-deck">Ath's numbers, limited to the ones the desk could back up.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="num" data-to="600">0</span><i>+</i><p>DSA problems solved</p></div>
+        <div class="stat"><span class="num" data-to="130">0</span><i>+</i><p>DSA / SQL assessments reviewed</p></div>
+        <div class="stat"><span class="num" data-to="74">0</span><p>TutorialsPoint tutorials</p></div>
+        <div class="stat"><span class="num" data-to="35">0</span><i>+</i><p>problems set at Vcriate</p></div>
+        <div class="stat"><span class="num" data-to="30">0</span><i>K+</i><p>Medium views</p></div>
+        <div class="stat"><span class="num" data-to="7">0</span><p>systems in the builds section</p></div>
+      </div>
+      <div class="honours">
+        <div class="hon"><span class="medal">I</span><div><b>Ankuran</b><span class="mono">Hackathon · Winner</span></div></div>
+        <div class="hon"><span class="medal">X</span><div><b>Hack4Delhi</b><span class="mono">Top 10 finalist</span></div></div>
+        <div class="hon"><span class="medal">X</span><div><b>IIT BHU · MLWARE / Eco</b><span class="mono">Top 10</span></div></div>
+        <div class="hon"><span class="medal">★</span><div><b>Codeforces Specialist · CodeChef 3★</b><span class="mono">Competitive programming</span></div></div>
+      </div>
+    </section>
+
+    <!-- ============ COLUMNS ============ -->
+    <section class="section fold" id="columns" data-story="Columns">
+      <div class="section-head">
+        <span class="sec-no mono">Section F</span>
+        <h2 class="sec-title split">Columns &amp; Op-Eds</h2>
+        <p class="sec-deck">Explaining things simply is part of engineering, not a side job.</p>
+      </div>
+      <div class="column-grid">
+        <a class="col-card tilt" href="https://athtripathi.medium.com/" target="_blank" rel="noopener" data-cursor="open">
+          <span class="col-mark blackletter">M</span>
+          <div class="kicker mono">Weekly column · Medium</div>
+          <h4>Engineering notes</h4>
+          <p>Implementation write-ups on LLM routing, ReTree memory, and how AI systems work under the hood. 30K+ views.</p>
+          <span class="mono more">Read on Medium ↗</span>
+        </a>
+        <a class="col-card tilt" href="https://www.tutorialspoint.com/authors/ath-tripathi" target="_blank" rel="noopener" data-cursor="open">
+          <span class="col-mark blackletter">T</span>
+          <div class="kicker mono">Syndicated · TutorialsPoint</div>
+          <h4>74 tutorials</h4>
+          <p>Long-form, step-by-step technical tutorials for readers who want working code at the end.</p>
+          <span class="mono more">Author page ↗</span>
+        </a>
+        <a class="col-card tilt" href="https://youtube.com/@TeachMeAth" target="_blank" rel="noopener" data-cursor="open">
+          <span class="col-mark blackletter">Y</span>
+          <div class="kicker mono">Broadcast · YouTube</div>
+          <h4>TeachMeAth</h4>
+          <p>Agentic system design, ReTree, KV Cache Lab and more. Explained simply first, then all the way down.</p>
+          <span class="mono more">Watch ↗</span>
+        </a>
+      </div>
+      <blockquote class="manifesto">
+        <p>“Start with the simple explanation. Then the architecture. Then the math. Then make it run.”</p>
+        <cite class="mono">— Ath Tripathi, house style</cite>
+      </blockquote>
+    </section>
+
+    <!-- ============ PUZZLES ============ -->
+    <section class="section fold" id="puzzles" data-story="Puzzles">
+      <div class="section-head">
+        <span class="sec-no mono">Section G</span>
+        <h2 class="sec-title split">Puzzles &amp; Games</h2>
+        <p class="sec-deck">Every good paper has a back page. Every answer here is something Ath has built with.</p>
+      </div>
+
+      <div class="puzzle-grid">
+        <div class="puzzle-box">
+          <div class="kicker mono">The Daily Crossword · No. 8</div>
+          <div class="xw-wrap">
+            <div class="xw" id="xw" aria-label="Crossword grid"></div>
+            <div class="clues">
+              <h5 class="mono">Across</h5>
+              <ol id="cluesA"></ol>
+              <h5 class="mono">Down</h5>
+              <ol id="cluesD"></ol>
+              <div class="xw-actions mono">
+                <button id="xwCheck" class="chip" type="button">Check</button>
+                <button id="xwHint" class="chip" type="button">Reveal a letter</button>
+                <span id="xwStatus"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="puzzle-box game-box">
+          <div class="kicker mono">Arcade · The Typesetter</div>
+          <p class="small">Letters fall from the press. Move the composing stick with your pointer or <kbd>←</kbd><kbd>→</kbd> and catch them in order to spell the target. Catching the wrong letter spills ink.</p>
+          <div class="game-stage">
+            <canvas id="game" width="520" height="360"></canvas>
+            <div class="game-overlay" id="gameOverlay">
+              <div class="blackletter go-title">The Typesetter</div>
+              <div class="mono go-sub" id="gameMsg">Spell the headline before the ink runs out.</div>
+              <button class="btn magnetic" id="gameStart" type="button"><span>Start the press</span></button>
+            </div>
+          </div>
+          <div class="game-hud mono"><span>Target <b id="gTarget">SHIP IT</b></span><span>Set <b id="gSet">—</b></span><span>Ink <b id="gInk">●●●</b></span><span>Score <b id="gScore">0</b></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LETTERS ============ -->
+    <section class="section fold letters" id="letters" data-story="Letters">
+      <div class="section-head">
+        <span class="sec-no mono">Section H</span>
+        <h2 class="sec-title split">Letters to the Editor</h2>
+        <p class="sec-deck">Hiring, collaborating, or found a bug in one of the builds? Ath answers his post.</p>
+      </div>
+      <div class="letter-grid">
+        <form class="letter tilt-soft" id="letterForm">
+          <div class="mono letter-to">To: Ath Tripathi, Editor · athtripathi@gmail.com</div>
+          <label><span class="mono">Your name</span><input name="name" required autocomplete="name" placeholder="Jane from an AI startup" /></label>
+          <label><span class="mono">Subject</span><input name="subject" required placeholder="Let's talk about an LLM engineer role" /></label>
+          <label><span class="mono">Letter</span><textarea name="msg" rows="5" required placeholder="Dear Ath,"></textarea></label>
+          <button class="btn magnetic" type="submit"><span>Seal &amp; send ✉</span></button>
+          <div class="wax" aria-hidden="true">AT</div>
+        </form>
+        <div class="wire">
+          <div class="kicker mono">Wire services</div>
+          <a class="wire-link magnetic" href="mailto:athtripathi@gmail.com"><span class="mono">Telegraph</span><b>athtripathi@gmail.com</b></a>
+          <a class="wire-link magnetic" href="https://github.com/ath34-tech" target="_blank" rel="noopener"><span class="mono">Archive</span><b>github.com/ath34-tech</b></a>
+          <a class="wire-link magnetic" href="https://www.linkedin.com/in/ath-tripathi-320115230/" target="_blank" rel="noopener"><span class="mono">Society pages</span><b>LinkedIn</b></a>
+          <a class="wire-link magnetic" href="https://athtripathi.medium.com/" target="_blank" rel="noopener"><span class="mono">Columns</span><b>Medium</b></a>
+          <a class="wire-link magnetic" href="https://youtube.com/@TeachMeAth" target="_blank" rel="noopener"><span class="mono">Broadcast</span><b>YouTube · TeachMeAth</b></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <div class="rule-double"></div>
+      <div class="blackletter foot-mast">The Ath Times</div>
+      <p class="mono">Written, built &amp; printed by Ath Tripathi · Set in Playfair, Source Serif &amp; Plex Mono · Hand-coded in HTML, CSS &amp; JS · © 2026</p>
+      <p class="mono foot-badges" id="footBadges"></p>
+    </footer>
+  </main>
+
+  <!-- ============ MAIL CHOOSER ============ -->
+  <div class="mailer" id="mailer" hidden>
+    <div class="mailer-backdrop" data-mclose></div>
+    <div class="mailer-card" role="dialog" aria-modal="true" aria-labelledby="mailerTitle">
+      <div class="mailer-top mono"><span>Telegraph office</span><button type="button" data-mclose aria-label="Close">✕</button></div>
+      <h3 id="mailerTitle">Send your letter to Ath</h3>
+      <p class="mailer-sub" id="mailerSub">To athtripathi@gmail.com. Choose how you'd like to send it, and your message will be filled in.</p>
+      <div class="mailer-opts">
+        <a class="mopt" id="mGmail" target="_blank" rel="noopener"><b>Gmail</b><span class="mono">Opens a filled-in draft in your browser</span></a>
+        <a class="mopt" id="mOutlook" target="_blank" rel="noopener"><b>Outlook</b><span class="mono">Outlook.com / Microsoft 365, in your browser</span></a>
+        <a class="mopt" id="mDefault"><b>Mail app</b><span class="mono">Your computer's default email app</span></a>
+        <button class="mopt" id="mCopy" type="button"><b>Copy</b><span class="mono" id="mCopyLbl">Copy the address to paste anywhere</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BUILD LOG READER ============ -->
+  <div class="reader" id="reader" aria-hidden="true">
+    <div class="reader-backdrop" data-close></div>
+    <article class="reader-page" role="dialog" aria-modal="true" aria-labelledby="rdTitle" data-lenis-prevent>
+      <header class="reader-top mono">
+        <span class="blackletter reader-mast">The Ath Times</span>
+        <span class="reader-sec">Build log</span>
+        <button class="reader-close" type="button" data-close>Close ✕</button>
+      </header>
+      <div id="readerBody"></div>
+    </article>
+  </div>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="character.js"></script>
+  <script src="scene.js"></script>
+  <script src="reader.js"></script>
+  <script src="world.js"></script>
+  <script src="games.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

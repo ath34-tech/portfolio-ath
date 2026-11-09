@@ -1,0 +1,30 @@
+# Dependencies (if a build step or tooling is added later)
+node_modules/
+
+# Local tool / assistant caches
+.code-review-graph/
+.qodo/
+.claude/
+
+# Environment & secrets (e.g. a future form-service key)
+.env
+.env.*
+!.env.example
+
+# Deploy tooling
+.netlify/
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
