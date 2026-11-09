@@ -26,15 +26,15 @@
     { id: "manifold", type: "job", title: "Manifold Ventures", sub: "Full-stack intern · 7 months", w: 9, d: 6.5, h: 12, text: "Full-stack product work and integrations from Dec 2024 to Jun 2025, including the Meavana Chrome extension." },
     { id: "bodh", type: "project", title: "Bodh AI", sub: "Real-time voice interviewer", w: 8.5, d: 7.5, h: 19, text: "Spoken Hindi/Hinglish interviews for Grade 7–8 students, on self-hosted LiveKit, Deepgram, an LLM and TTS." },
     { id: "hack4delhi", type: "award", title: "Hack4Delhi", sub: "Top 10 finalist", s: 1.15, text: "Top 10 finalist at Hack4Delhi." },
-    { id: "kvcache", type: "project", title: "KV Cache Lab", sub: "Inference learning tool", w: 7.5, d: 6.5, h: 15, text: "A local lab that shows how KV-cache memory grows: Qwen3 8B costs 144 KiB per token at fp16." },
+    { id: "kvcache", type: "project", title: "KV Cache Lab", sub: "Inference learning tool", w: 7.5, d: 6.5, h: 15, text: "A local-first Ollama chat app with live TTFT, TPOT and tokens/s, plus a theoretical KV-cache estimator: Qwen3 8B costs 144 KiB per token at fp16." },
     { id: "vcriate", type: "job", title: "Vcriate", sub: "Problem setter → reviewer", w: 8, d: 6, h: 10.5, text: "Wrote 35+ problems as a problem-setter intern, then reviewed 130+ DSA and SQL assessments on contract." },
     { id: "retree", type: "project", title: "ReTree", sub: "Agent memory · paper → code", w: 7, d: 6, h: 13, text: "An implementation of the ReTree agent-memory paper (arXiv:2608.10676), with a Medium write-up." },
     { id: "cp", type: "award", title: "Competitive Programming", sub: "CF Specialist · CodeChef 3★", s: 1.1, text: "Codeforces Specialist, CodeChef 3★, and 600+ DSA problems solved." },
     { id: "paath", type: "job", title: "Paath.Live", sub: "Machine Learning intern", w: 7.5, d: 6, h: 11, text: "Fine-tuned models with LoRA and QLoRA." },
     { id: "atlas", type: "project", title: "ATLAS", sub: "Time-aware agent testing", w: 7, d: 6, h: 12, text: "An implementation of the ATLAS time-testing idea for agent evaluation, on Gemini 3.1 Flash-Lite." },
-    { id: "writing", type: "award", title: "The Writer's Guild", sub: "74 tutorials · 30K+ views", s: 1.2, text: "74 tutorials on TutorialsPoint, 30K+ Medium views, and the TeachMeAth channel." },
+    { id: "writing", type: "award", title: "The Writer's Guild", sub: "Twilio · Strapi · Webiny · 74 tutorials", s: 1.25, text: "Guest bylines on the Twilio, Strapi and Webiny blogs, 74 TutorialsPoint tutorials, 30K+ Medium views, and the TeachMeAth channel." },
     { id: "iitbhu", type: "award", title: "IIT BHU", sub: "MLWARE / Eco · Top 10", s: 1.0, text: "Top 10 at the IIT BHU MLWARE / Eco hackathon." },
-    { id: "dexa", type: "project", title: "Dexa", sub: "ML copilot · prototype", w: 5.5, d: 5, h: 7, text: "A concept for a terminal-first ML copilot, exploring sandboxed execution and dataset versioning. Prototype." },
+    { id: "dexa", type: "project", title: "Dexa", sub: "Agentic ML copilot · CLI", w: 7, d: 6, h: 14, text: "A terminal-first agentic copilot for ML engineers. LangGraph agents profile datasets, flag quality issues, suggest models and metrics, and reflect after every step." },
   ];
 
   /* ---------- wall-poster content for roles & awards (projects use the build logs) ---------- */
@@ -104,13 +104,14 @@
     },
     writing: {
       kicker: "Achievement · Writing & teaching", title: "The Writer's Guild",
-      deck: "74 tutorials, 30K+ Medium views, and a YouTube channel called TeachMeAth.",
-      meta: [["TutorialsPoint", "74 tutorials"], ["Medium", "30K+ views"], ["YouTube", "TeachMeAth"]],
+      deck: "Guest bylines on the Twilio, Strapi and Webiny blogs, 74 tutorials, 30K+ Medium views, and a YouTube channel called TeachMeAth.",
+      meta: [["Guest author", "Twilio · Strapi · Webiny"], ["TutorialsPoint", "74 tutorials"], ["Medium", "30K+ views"]],
       body: [
-        { h: "What I write", p: ["Long-form tutorials on TutorialsPoint, implementation write-ups on Medium (LLM routing, ReTree memory), and videos on agentic system design and inference."] },
+        { h: "Guest bylines", list: ["Twilio Blog: “Enable Multiple OTP Methods in your Django Application with Twilio”. Users choose SMS or WhatsApp for their one-time passcode.", "Webiny Blog: “Next-generation Image Handling with Webiny File Manager”. Uploads, API-based retrieval, responsive images, layout-shift prevention, and a comparison with Strapi.", "Strapi Blog: “Making a Simple Strapi Plugin”. Building a Strapi plugin from scratch."] },
+        { h: "What else I write", p: ["Long-form tutorials on TutorialsPoint, implementation write-ups on Medium (LLM routing, ReTree memory), and videos on agentic system design and inference."] },
         { h: "How I write", p: ["Simple explanation first. Then the architecture, then the math, then working code. If I can't explain a system simply, I don't understand it yet."] },
       ],
-      links: [["Medium", "https://athtripathi.medium.com/"], ["TutorialsPoint", "https://www.tutorialspoint.com/authors/ath-tripathi"], ["YouTube", "https://youtube.com/@TeachMeAth"]],
+      links: [["Twilio article", "https://www.twilio.com/en-us/blog/enable-multiple-otp-methods-django"], ["Webiny article", "https://www.webiny.com/blog/next-generation-image-handling-webiny-cms"], ["Strapi author page", "https://strapi.io/user/ath-tripathi"], ["Medium", "https://athtripathi.medium.com/"], ["TutorialsPoint", "https://www.tutorialspoint.com/authors/ath-tripathi"], ["YouTube", "https://youtube.com/@TeachMeAth"]],
     },
   };
 

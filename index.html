@@ -54,6 +54,7 @@
       <a href="#columns">Columns</a>
       <a href="#puzzles">Puzzles</a>
       <a href="#letters">Letters</a>
+      <a href="https://drive.google.com/file/d/1Cf1pVIx970WwrCrQ1tN_N1MSmQw8mTNc/view?usp=sharing" target="_blank" rel="noopener" class="nav-resume">Résumé ↗</a>
     </div>
   </nav>
 
@@ -89,15 +90,16 @@
           <div class="byline mono">By the Editorial Desk · Applied AI &amp; LLM Engineer · B.Tech CSE (AI)</div>
           <div class="cols-2">
             <p class="dropcap">A lot of AI demos never get past the notebook. <b class="name-inline">Ath Tripathi</b> keeps going until someone can actually use what he built. He builds LLM products end to end: the router that picks which model answers, the backend that streams the tokens, the voice pipeline that has to stop talking when a twelve-year-old interrupts it, and the interface on top.</p>
-            <p>His builds so far: <b>Pixie</b>, a desktop agent that launched on Product Hunt. <b>RouteLLMESH</b>, an OpenAI-compatible router. <b>Bodh AI</b>, a real-time voice interviewer. <b>KV Cache Lab</b>, a tool for seeing what inference really costs. He has also turned research papers like <b>ReTree</b> and <b>ATLAS</b> into running code.</p>
+            <p>His builds so far: <b>Pixie</b>, a desktop agent that launched on Product Hunt. <b>RouteLLMESH</b>, an OpenAI-compatible router. <b>Bodh AI</b>, a real-time voice interviewer. <b>KV Cache Lab</b>, a tool for seeing what inference really costs. <b>Dexa</b>, a multi-agent ML copilot for the terminal. He has also turned research papers like <b>ReTree</b> and <b>ATLAS</b> into running code.</p>
             <p class="pull">“I'd rather show you what I built, where it was hard, and what changed than give you a list of buzzwords.”</p>
-            <p>Most of his interest sits in the unglamorous middle of the stack: prefill and decode, time-to-first-token, KV-cache memory, tool selection, conversation state. He learns by building, measures before he makes a claim, and writes it all up. That's 74 tutorials and 30K+ Medium views so far.</p>
+            <p>Most of his interest sits in the unglamorous middle of the stack: prefill and decode, time-to-first-token, KV-cache memory, tool selection, conversation state. He learns by building, measures before he makes a claim, and writes it all up. That's 74 tutorials, 30K+ Medium views, and guest bylines on the Twilio, Strapi and Webiny blogs.</p>
             <p><b>Now accepting offers</b> for Applied AI, LLM / Agent, AI Product and AI-infrastructure backend roles, especially at early-stage teams where one engineer owns a feature from start to finish.</p>
           </div>
           <div class="cta-row">
             <a class="btn magnetic" href="#builds" data-cursor="read"><span>Read the build logs</span></a>
             <a class="btn btn-ghost magnetic" href="#city" data-cursor="play"><span>Ride through the city</span></a>
             <a class="btn btn-ghost magnetic" href="mailto:athtripathi@gmail.com" data-cursor="write"><span>Write to Ath</span></a>
+            <a class="btn btn-ghost magnetic" href="https://drive.google.com/file/d/1Cf1pVIx970WwrCrQ1tN_N1MSmQw8mTNc/view?usp=sharing" target="_blank" rel="noopener" data-cursor="open"><span>Résumé ↗</span></a>
           </div>
         </article>
 
@@ -123,6 +125,11 @@
               <li><a href="#letters"><span>Letters to the Editor</span><i>H1</i></a></li>
             </ol>
           </div>
+          <div class="side-box creds">
+            <div class="kicker mono">Press credentials</div>
+            <a class="cred" href="https://drive.google.com/file/d/1Cf1pVIx970WwrCrQ1tN_N1MSmQw8mTNc/view?usp=sharing" target="_blank" rel="noopener" data-cursor="open"><span class="mono">Engineering</span><b>Résumé</b><i>↗</i></a>
+            <a class="cred" href="https://drive.google.com/file/d/19CbHHWzo8a-I_7eRj6jboAywnJCIiXKl/view?usp=sharing" target="_blank" rel="noopener" data-cursor="open"><span class="mono">Technical writing</span><b>Writer résumé</b><i>↗</i></a>
+          </div>
           <div class="side-box market">
             <div class="kicker mono">Markets · Ratings</div>
             <div class="mkt"><span>Codeforces</span><b>Specialist <i class="up">▲</i></b></div>
@@ -144,6 +151,7 @@
           <span>Bodh AI teaches a voice agent to stop talking when interrupted</span>
           <span>KV Cache Lab: Qwen3 8B costs 144 KiB of cache per token at fp16</span>
           <span>Hack4Delhi: Ath's team makes the <b>Top 10 finalists</b></span>
+          <span>Guest byline: Ath on the <b>Twilio</b> blog, multiple OTP methods in Django</span>
           <span>Ankuran hackathon: <b>Winner</b></span>
         </div>
       </div>
@@ -212,7 +220,7 @@
           <div class="stamp stamp-gold">In progress</div>
           <div class="kicker mono">A4 · Inference · Learning tool</div>
           <h3>KV Cache Lab: what does a long conversation actually cost?</h3>
-          <p>A local FastAPI + Ollama + React app with SSE chat and a live metrics dashboard. It shows how KV-cache memory grows with context length. Try it below with Qwen3 8B's real config.</p>
+          <p>A local-first LLM chat app: Ollama inference with a live dashboard for TTFT, TPOT and tokens/s, next to a theoretical KV-cache estimator. The point is to connect the runtime numbers to the math behind them. Try the estimator below with Qwen3 8B's real config.</p>
           <div class="kvcalc" id="kvcalc">
             <div class="kv-formula mono">2 × <b>36</b> layers × <b>8</b> kv-heads × <b>128</b> dim × <b id="kvBytesL">2</b> B × <b id="kvTokL">8,192</b> tokens</div>
             <label class="mono">Context length <input type="range" id="kvTok" min="512" max="40960" step="512" value="8192" /></label>
@@ -222,7 +230,8 @@
             <div class="kv-out"><span class="kv-num" id="kvOut">1.13</span><span class="mono" id="kvUnit">GiB</span><span class="mono kv-per" id="kvPer">144 KiB / token</span></div>
             <div class="kv-meter"><span id="kvMeter"></span></div>
           </div>
-          <div class="links mono"><button class="read-more" type="button">Build log →</button></div>
+          <ul class="tags mono"><li>FastAPI</li><li>Ollama</li><li>React</li><li>TypeScript</li><li>SQLite</li><li>Pytest</li></ul>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://github.com/ath34-tech/kv-cache-lab" target="_blank" rel="noopener">Repo ↗</a></div>
         </article>
 
         <!-- ReTree -->
@@ -244,12 +253,17 @@
         </article>
 
         <!-- Dexa -->
-        <article class="story story-wide story-brief tilt" data-cursor="read" data-project="dexa">
-          <div class="stamp stamp-gold">Prototype</div>
-          <div class="kicker mono">A7 · In brief · Developer tooling</div>
-          <h3>Dexa: a terminal-first ML copilot</h3>
-          <p>A concept for an ML copilot that lives in the terminal, where ML work actually happens. It explores sandboxed code execution and dataset versioning. Still on the drawing board, and labelled as such.</p>
-          <div class="links mono"><button class="read-more" type="button">Read the concept →</button></div>
+        <article class="story story-wide tilt" data-cursor="read" data-story="Dexa" data-project="dexa">
+          <div class="stamp stamp-blue">Open source · Early</div>
+          <div class="kicker mono">A7 · Agents · Developer tooling</div>
+          <h3>Dexa: a terminal-first agentic copilot for ML engineers</h3>
+          <p>Point it at a dataset and talk to it from the terminal. A team of agents profiles the data, flags missing values, skew, outliers, imbalance and leakage, suggests preprocessing, models and metrics, and diagnoses problems like overfitting.</p>
+          <div class="flow mono">
+            <span>query</span><b>→</b><span>understand</span><b>→</b><span>plan</span><b>→</b><span class="hot">execute</span><b>→</b><span>reflect</span><b>→</b><span>respond</span>
+          </div>
+          <p class="small">The agents run as a LangGraph state machine. After every step, a Reflection agent decides whether to continue, replan or stop. Dexa uses deterministic tools first and falls back to generated Python only in a controlled executor.</p>
+          <ul class="tags mono"><li>LangGraph</li><li>Typer CLI</li><li>Groq</li><li>pandas</li><li>scikit-learn</li><li>statsmodels</li></ul>
+          <div class="links mono"><button class="read-more" type="button">Build log →</button><a href="https://github.com/ath34-tech/dexa" target="_blank" rel="noopener">Repo ↗</a></div>
         </article>
       </div>
     </section>
@@ -353,6 +367,7 @@
           <h4>Your team?</h4>
           <p>Ath is looking for Applied AI · LLM / Agent · AI Product · AI-infra backend roles. Strongest fit: AI-first and YC-style early-stage teams.</p>
           <a class="mono" href="#letters">Reply to this notice →</a>
+          <a class="mono" href="https://drive.google.com/file/d/1Cf1pVIx970WwrCrQ1tN_N1MSmQw8mTNc/view?usp=sharing" target="_blank" rel="noopener">Read the résumé ↗</a>
         </div>
       </div>
     </section>
@@ -410,6 +425,33 @@
           <span class="mono more">Watch ↗</span>
         </a>
       </div>
+
+      <div class="bylines">
+        <div class="bylines-head">
+          <span class="kicker mono">Guest bylines · As a technical author</span>
+          <h3>Published elsewhere</h3>
+          <a class="mono writer-cv" href="https://drive.google.com/file/d/19CbHHWzo8a-I_7eRj6jboAywnJCIiXKl/view?usp=sharing" target="_blank" rel="noopener">Writer résumé ↗</a>
+        </div>
+        <a class="clip tilt" href="https://www.twilio.com/en-us/blog/enable-multiple-otp-methods-django" target="_blank" rel="noopener" data-cursor="open">
+          <span class="clip-pub mono">Twilio Blog</span>
+          <h4>Enable Multiple OTP Methods in your Django Application with Twilio</h4>
+          <p>A Django app where users choose SMS or WhatsApp for their one-time passcode, built with the Twilio Python library, Twilio SMS and the WhatsApp sandbox.</p>
+          <span class="mono more">Read on twilio.com ↗</span>
+        </a>
+        <a class="clip tilt" href="https://www.webiny.com/blog/next-generation-image-handling-webiny-cms" target="_blank" rel="noopener" data-cursor="open">
+          <span class="clip-pub mono">Webiny Blog</span>
+          <h4>Next-generation Image Handling with Webiny File Manager</h4>
+          <p>Uploads, editing, API-based image retrieval, responsive images, avoiding layout shift, and how it compares with Strapi.</p>
+          <span class="mono more">Read on webiny.com ↗</span>
+        </a>
+        <a class="clip tilt" href="https://strapi.io/user/ath-tripathi" target="_blank" rel="noopener" data-cursor="open">
+          <span class="clip-pub mono">Strapi Blog</span>
+          <h4>Making a Simple Strapi Plugin</h4>
+          <p>A step-by-step guide to building a Strapi plugin from scratch.</p>
+          <span class="mono more">Author page on strapi.io ↗</span>
+        </a>
+      </div>
+
       <blockquote class="manifesto">
         <p>“Start with the simple explanation. Then the architecture. Then the math. Then make it run.”</p>
         <cite class="mono">— Ath Tripathi, house style</cite>
@@ -482,6 +524,8 @@
           <a class="wire-link magnetic" href="https://www.linkedin.com/in/ath-tripathi-320115230/" target="_blank" rel="noopener"><span class="mono">Society pages</span><b>LinkedIn</b></a>
           <a class="wire-link magnetic" href="https://athtripathi.medium.com/" target="_blank" rel="noopener"><span class="mono">Columns</span><b>Medium</b></a>
           <a class="wire-link magnetic" href="https://youtube.com/@TeachMeAth" target="_blank" rel="noopener"><span class="mono">Broadcast</span><b>YouTube · TeachMeAth</b></a>
+          <a class="wire-link magnetic" href="https://drive.google.com/file/d/1Cf1pVIx970WwrCrQ1tN_N1MSmQw8mTNc/view?usp=sharing" target="_blank" rel="noopener"><span class="mono">Credentials</span><b>Résumé</b></a>
+          <a class="wire-link magnetic" href="https://drive.google.com/file/d/19CbHHWzo8a-I_7eRj6jboAywnJCIiXKl/view?usp=sharing" target="_blank" rel="noopener"><span class="mono">Writing credentials</span><b>Writer résumé</b></a>
         </div>
       </div>
     </section>
